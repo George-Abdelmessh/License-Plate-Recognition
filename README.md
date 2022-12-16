@@ -12,7 +12,9 @@ To get a local copy up and running follow these simple steps:
 ```
 pip install easyocr 
 ```
+```
 pip install opencv-python
+```
 ```
 pip install opencv-contrib-python
 ```
