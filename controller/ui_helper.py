@@ -15,4 +15,5 @@ class UiHelper:
 
 
     def start(self):
-        self.img.processing()
+        x = self.img.processing()
+        return x

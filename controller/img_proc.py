@@ -36,12 +36,12 @@ class Recognition:
 
         if len(self.detection) == 0:
             self.text = 'impossible to read the text from license plate.'
-            cv.putText(self.car, text, (20, 40), cv.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
-            cv.imshow('car', self.car)
-            cv.waitKey(0)
+            cv.putText(self.car, self.text, (20, 40), cv.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
+            # cv.imshow('car', self.car)
+            return [self.car, self.text]
         else:
             cv.drawContours(self.car, [self.plate_cnt], -1, (0, 255, 0), 3)
-            text = f'{self.detection[0][1]} {self.detection[0][2] * 100: .2f}%'
-            cv.putText(self.car, text, (x, y-20), cv.FONT_HERSHEY_SIMPLEX, 0.75,(0, 255, 0), 2)
-            cv.imshow('car', self.car)
-            cv.waitKey(0)
+            self.text = f'{self.detection[0][1]} {self.detection[0][2] * 100: .2f}%'
+            cv.putText(self.car, self.text, (x, y-20), cv.FONT_HERSHEY_SIMPLEX, 0.75,(0, 255, 0), 2)
+            # cv.imshow('car', self.car)
+            return [self.car, self.detection[0][1]]
