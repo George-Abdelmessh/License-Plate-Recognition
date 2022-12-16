@@ -1,9 +1,18 @@
-# import sys
-# sys.path.append('E:/SU IT/4.1/Image proccessing/License-Plate-Recognition/view')
-# import ui
-# i = ui.Root()
+from tkinter import filedialog
+from img_proc import Recognition
+
 
 class UiHelper:
     
     def __init__(self):
         print("Helper called")
+
+    def fileDialog(self):
+        self.filename = filedialog.askopenfilename(initialdir =  "/", title = "Select An Image", filetype =
+        (("jpeg files","*.jpg"),("all files","*.*")) )
+        self.img = Recognition(self.filename)
+        return self.filename
+
+
+    def start(self):
+        self.img.processing()
