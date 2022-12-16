@@ -1,5 +1,11 @@
+<<<<<<< Updated upstream
 import cv2 as cv
 from easyocr import Reader
+=======
+'''' 
+    TODO Before Run Read [README.md] file
+'''
+>>>>>>> Stashed changes
 
 # Read an Image Using [imread]
 car = cv.imread('./cars/car3.jpg')
