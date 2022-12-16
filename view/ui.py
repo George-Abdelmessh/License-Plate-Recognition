@@ -2,7 +2,6 @@ from tkinter import *
 import sys
 import os
 from PIL import ImageTk, Image  
-import numpy as np
 
 
 sys.path.append(f'{os.getcwd()}/controller')
